@@ -1,79 +1,111 @@
 # DSList - Catálogo de Jogos
 
-Este projeto é uma API RESTful desenvolvida com Spring Boot, utilizando PostgreSQL como banco de dados relacional. A aplicação permite gerenciar uma lista de jogos, incluindo operações de listagem, inserção e ordenação.
+Este projeto é uma aplicação backend com Spring Boot que expõe uma API REST para gerenciar listas de jogos. Ele consome dados de um banco de dados relacional, utilizando JPA e H2 em ambiente de desenvolvimento.
 
 ## 🚀 Tecnologias Utilizadas
 
 <p align="left">
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java" />
   <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/H2-004482?style=for-the-badge&logo=h2&logoColor=white" alt="H2 Database" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven" />
 </p>
 
 ## ⚙️ Pré-requisitos
 
-* [Java 17 ou superior](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [Maven](https://maven.apache.org/install.html)
-* [PostgreSQL](https://www.postgresql.org/download/)
 
-## 📆 Instalação
+## 📦 Instalação
 
 1. Clone o repositório:
 
-   ```bash
-   git clone https://github.com/NoClick11/DSList.git
-   cd DSList
-   ```
+```bash
+git clone https://github.com/NoClick11/DSList.git
+cd DSList
+```
 
-2. Configure o banco de dados:
+2. Compile o projeto:
 
-   * Crie um banco no PostgreSQL com o nome desejado
-   * Atualize as credenciais em `src/main/resources/application.properties`
-
-3. Compile o projeto:
-
-   ```bash
-   mvn clean install
-   ```
+```bash
+mvn clean install
+```
 
 ## ▶️ Execução
 
-Para iniciar a aplicação:
+Execute a aplicação:
 
 ```bash
 mvn spring-boot:run
 ```
 
-A aplicação estará acessível em `http://localhost:8080`
+A API estará disponível em: `http://localhost:8080`
 
-## 📁 Estrutura do Projeto
+## 🔧 Funcionalidades da API
+
+* Listar todos os jogos
+* Listar jogos por ID
+* Listar todas as listas de jogos
+* Listar jogos de uma lista específica
+* Mover a posição de um jogo dentro de uma lista
+
+## 📘 Exemplos de Uso
+
+### 📄 Listar Todos os Jogos
+
+```http
+GET /games
+```
+
+### 🔍 Buscar Jogo por ID
+
+```http
+GET /games/1
+```
+
+### 📋 Listar Todas as Listas de Jogos
+
+```http
+GET /lists
+```
+
+### 📂 Listar Jogos de uma Lista Específica
+
+```http
+GET /lists/1/games
+```
+
+### 🔄 Mover Posição de um Jogo na Lista
+
+```http
+POST /lists/1/replacement
+Content-Type: application/json
+
+{
+  "sourceIndex": 2,
+  "destinationIndex": 0
+}
+```
+
+## 🧱 Estrutura do Projeto
 
 ```plaintext
 DSList/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── noclick/
-│   │   │           └── dslist/
-│   │   │               ├── controller/
-│   │   │               ├── model/
-│   │   │               ├── repository/
-│   │   │               └── service/
+│   │   │   └── com/devsuperior/dslist/
+│   │   │       ├── controllers/
+│   │   │       ├── dto/
+│   │   │       ├── entities/
+│   │   │       ├── repositories/
+│   │   │       └── services/
 │   │   └── resources/
-│   │       ├── application.properties
+│   │       └── application.properties
 ├── pom.xml
 ```
 
-* `controller/`: Controladores REST
-* `model/`: Entidades JPA
-* `repository/`: Interfaces de persistência
-* `service/`: Lógica de negócio
-
-## 🥺 Testes
-
-Para executar os testes:
+## 🧪 Testes
 
 ```bash
 mvn test
@@ -85,4 +117,4 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ## 🤝 Contribuição
 
-Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias e correções!
+Contribuições são bem-vindas! Abra uma issue ou pull request com melhorias ou correções.
