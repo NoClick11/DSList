@@ -9,12 +9,14 @@ Este projeto é uma aplicação backend com Spring Boot que expõe uma API REST 
   <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot" />
   <img src="https://img.shields.io/badge/H2-004482?style=for-the-badge&logo=h2&logoColor=white" alt="H2 Database" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
 </p>
 
 ## ⚙️ Pré-requisitos
 
 * [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [Maven](https://maven.apache.org/install.html)
+* [Docker](https://docs.docker.com/get-docker/)
 
 ## 📦 Instalação
 
@@ -33,13 +35,27 @@ mvn clean install
 
 ## ▶️ Execução
 
-Execute a aplicação:
+### Executando localmente com Maven:
 
 ```bash
 mvn spring-boot:run
 ```
 
 A API estará disponível em: `http://localhost:8080`
+
+### Executando com Docker:
+
+1. Construa a imagem Docker:
+
+```bash
+docker build -t dslist-api .
+```
+
+2. Rode o container:
+
+```bash
+docker run -p 8080:8080 dslist-api
+```
 
 ## 🔧 Funcionalidades da API
 
@@ -102,6 +118,7 @@ DSList/
 │   │   │       └── services/
 │   │   └── resources/
 │   │       └── application.properties
+├── Dockerfile
 ├── pom.xml
 ```
 
