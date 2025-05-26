@@ -10,6 +10,7 @@ Este projeto é uma aplicação backend com Spring Boot que expõe uma API REST 
   <img src="https://img.shields.io/badge/H2-004482?style=for-the-badge&logo=h2&logoColor=white" alt="H2 Database" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
 </p>
 
 ## ⚙️ Pré-requisitos
@@ -17,6 +18,7 @@ Este projeto é uma aplicação backend com Spring Boot que expõe uma API REST 
 * [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [Maven](https://maven.apache.org/install.html)
 * [Docker](https://docs.docker.com/get-docker/)
+* [Postman](https://www.postman.com/downloads/)
 
 ## 📦 Instalação
 
@@ -66,6 +68,8 @@ docker run -p 8080:8080 dslist-api
 * Mover a posição de um jogo dentro de uma lista
 
 ## 📘 Exemplos de Uso
+
+Você pode testar os endpoints utilizando o Postman:
 
 ### 📄 Listar Todos os Jogos
 
